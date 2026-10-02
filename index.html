@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kateryna Nevechera | Computer Science graduate and game development portfolio.">
+  <title>Kateryna Nevechera | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="language-switch" aria-label="Language selection">
+    <button class="language-button" data-language="en" type="button">EN</button>
+    <button class="language-button" data-language="pl" type="button">PL</button>
+  </div>
+
+  <div class="portfolio-layout">
+    <aside class="sidebar">
+      <h1>Kateryna Nevechera</h1>
+
+      <p data-i18n="about"></p>
+
+      <div class="skills" aria-label="Skills">
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">Unity</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">ShaderLab / HLSL</span>
+        <span class="skill-tag">Blender</span>
+        <span class="skill-tag">Aseprite</span>
+        <span class="skill-tag">Windows</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </aside>
+
+    <main class="projects">
+
+      <!-- Bake & Sell Bakery Simulator -->
+      <section class="project">
+        <div class="media-grid media-grid--bakery">
+          <div class="bakery-main-media">
+            <img
+              src="images/BAS1.gif"
+              alt="Bake & Sell Bakery Simulator gameplay"
+            >
+          </div>
+
+          <img
+            src="images/BAS2.jpg"
+            alt="Bake & Sell Bakery Simulator screenshot"
+          >
+
+          <img
+            src="images/BAS3.png"
+            alt="Bake & Sell Bakery Simulator screenshot"
+          >
+        </div>
+
+        <h2 data-i18n="bakerySimulatorTitle"></h2>
+        <p data-i18n="bakerySimulatorDescription"></p>
+
+        <p>
+          <a
+            href="https://k4tmago.itch.io/bake-and-sell"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="itchIoLink"
+          ></a>
+        </p>
+      </section>
+
+      <!-- 3D Detective Puzzle Game -->
+      <section class="project">
+        <div class="media-grid media-grid--detective">
+          <img
+            src="images/detective-1.png"
+            alt="3D Detective Puzzle Game screenshot"
+          >
+
+          <img
+            src="images/detective-2.png"
+            alt="3D Detective Puzzle Game screenshot"
+          >
+
+          <img
+            class="detective-main-media"
+            src="images/detective-3.png"
+            alt="3D Detective Puzzle Game screenshot"
+          >
+        </div>
+
+        <h2 data-i18n="detectivePuzzleGameTitle"></h2>
+        <p data-i18n="detectivePuzzleGameDescription"></p>
+      </section>
+
+      <!-- Custom Transparent Interior Shader -->
+      <section class="project">
+        <div class="media-grid">
+          <img
+            src="images/withoutShader.png"
+            alt="Scene without the custom shader"
+          >
+
+          <img
+            src="images/withShader.png"
+            alt="Scene with the custom transparent interior shader"
+          >
+        </div>
+
+        <h2 data-i18n="transparentInteriorShaderTitle"></h2>
+        <p data-i18n="transparentInteriorShaderDescription"></p>
+
+        <p>
+          <a
+            href="https://github.com/kanevech/Custom-Shader-Transparent-Cube-Darkness-Unity"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="githubLink"
+          ></a>
+        </p>
+      </section>
+
+      <!-- App GameDev Monitor -->
+      <section class="project">
+        <div class="media-grid media-grid--three-columns">
+          <img
+            class="equal-media"
+            src="images/GDMonitor1.png"
+            alt="App GameDev Monitor screenshot"
+          >
+
+          <img
+            class="equal-media"
+            src="images/GDMonitor2.png"
+            alt="App GameDev Monitor screenshot"
+          >
+
+          <img
+            class="equal-media"
+            src="images/GDMonitor4.png"
+            alt="App GameDev Monitor screenshot"
+          >
+        </div>
+
+        <h2 data-i18n="gameDevMonitorTitle"></h2>
+        <p data-i18n="gameDevMonitorDescription"></p>
+      </section>
+
+      <!-- 3D Models in Blender -->
+      <section class="project">
+        <div class="media-grid media-grid--blender">
+          <img
+            src="images/Blender1.png"
+            alt="3D model created in Blender"
+          >
+
+          <video
+            src="images/Blender2.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+            aria-label="Blender 3D animation"
+          ></video>
+
+          <video
+            class="blender-small-media"
+            src="images/Blender3.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+            aria-label="Blender 3D animation"
+          ></video>
+        </div>
+
+        <h2 data-i18n="blenderProjectsTitle"></h2>
+        <p data-i18n="blenderProjectsDescription"></p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Lightbox -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Media viewer"
+  >
+    <button
+      class="lightbox-button lightbox-close"
+      data-i18n-attr="aria-label:close"
+      aria-label="Close"
+      type="button"
+    >×</button>
+
+    <button
+      class="lightbox-button lightbox-previous"
+      data-i18n-attr="aria-label:previous"
+      aria-label="Previous"
+      type="button"
+    >‹</button>
+
+    <div id="lightbox-content"></div>
+
+    <button
+      class="lightbox-button lightbox-next"
+      data-i18n-attr="aria-label:next"
+      aria-label="Next"
+      type="button"
+    >›</button>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

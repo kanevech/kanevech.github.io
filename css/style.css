@@ -1,0 +1,362 @@
+:root {
+  --background-color: #1b1920;
+  --text-color: #ebefd7;
+  --accent-color: #9aae56;
+  --purple-color: #5b3c64;
+  --muted-text-color: rgba(235, 239, 215, 0.7);
+  --content-max-width: 1100px;
+  --content-gap: 60px;
+}
+
+/* =========================
+   Base
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* =========================
+   Language switch
+   ========================= */
+
+.language-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  display: flex;
+  gap: 6px;
+}
+
+.language-button {
+  background: var(--background-color);
+  border: 1px solid var(--purple-color);
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.language-button:hover {
+  background: var(--purple-color);
+}
+
+.language-button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+/* =========================
+   Main layout
+   ========================= */
+
+.portfolio-layout {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: var(--content-gap);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding-top: 80px;
+  transform: translateX(-65px);
+}
+
+.sidebar h1 {
+  color: var(--accent-color);
+  font-size: 2.3rem;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.sidebar > p {
+  text-align: justify;
+}
+
+/* =========================
+   Skills
+   ========================= */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  background: var(--purple-color);
+  color: var(--text-color);
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Projects
+   ========================= */
+
+.projects {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.project {
+  margin-bottom: 60px;
+}
+
+.project h2 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin: 14px 0 4px;
+}
+
+.project p {
+  color: var(--muted-text-color);
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.project a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Media grids
+   ========================= */
+
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.media-grid > img,
+.media-grid > video,
+.media-grid > div {
+  width: 100%;
+  display: block;
+}
+
+.media-grid > img,
+.media-grid > video {
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.media-grid > img:hover,
+.media-grid > video:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   Bakery project
+   ========================= */
+
+.media-grid--bakery {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bakery-main-media {
+  grid-column: 1 / -1;
+}
+
+.bakery-main-media img {
+  width: 100%;
+}
+
+/* =========================
+   Detective project
+   ========================= */
+
+.media-grid--detective {
+  grid-template-columns: 1fr 1fr;
+}
+
+.detective-main-media {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   App GameDev Monitor
+   ========================= */
+
+.media-grid--three-columns {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.equal-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: var(--background-color);
+}
+
+/* =========================
+   Blender project
+   ========================= */
+
+.media-grid--blender {
+  align-items: center;
+}
+
+.blender-small-media {
+  grid-column: 1 / -1;
+  width: 60% !important;
+  justify-self: center;
+}
+
+/* =========================
+   Lightbox
+   ========================= */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(27, 25, 32, 0.95);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+#lightbox-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox-content img,
+#lightbox-content video {
+  max-width: 85vw;
+  max-height: 85vh;
+  border-radius: 8px;
+}
+
+.lightbox-button {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--purple-color);
+  color: var(--text-color);
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lightbox-button:hover {
+  background: var(--accent-color);
+  color: var(--background-color);
+}
+
+.lightbox-previous {
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 24px;
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 900px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sidebar {
+    position: static;
+    padding-top: 60px;
+    margin-bottom: 40px;
+    transform: none;
+  }
+
+  .projects {
+    padding-top: 0;
+  }
+
+  .blender-small-media {
+    width: 80% !important;
+  }
+
+  .lightbox-previous {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-grid--three-columns,
+  .media-grid--bakery,
+  .media-grid--detective {
+    grid-template-columns: 1fr;
+  }
+
+  .bakery-main-media,
+  .detective-main-media {
+    grid-column: auto;
+  }
+
+  .blender-small-media {
+    width: 100% !important;
+  }
+}
